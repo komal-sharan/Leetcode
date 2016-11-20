@@ -29,3 +29,64 @@ public:
         
     }
 };
+
+// Maximum subarray problem
+class Solution {
+public:
+    int maxSubArrayLen(vector<int>& nums, int k) {
+        int arraysize=nums.size();
+        int size=1;
+        int sum=0;
+        int largestsize=0;
+        int count=0;
+        
+        if(arraysize==1)
+        {
+            if(nums[0]==k)
+            largestsize=1;
+        }
+        else
+        {
+          
+        while(size<=arraysize)
+        {
+            
+            for(int i=0;i<=arraysize;i++)
+            {
+               
+                for(int j=i;j<size+i && j<arraysize ;j++)
+                {
+                   
+                    sum+=nums[j];
+                    count++;
+                    
+                    
+                 }
+                
+                
+                if(sum==k)
+                {
+                    
+                    if(largestsize<count)
+                     largestsize=count;
+                    
+                   
+                    
+                    
+                }
+                    
+                    sum=0;
+                    count=0;
+                
+            }
+            size++;
+            
+        }
+        
+            
+        }
+        
+       return largestsize;
+        
+    }
+};
