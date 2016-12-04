@@ -1,8 +1,4 @@
-Linked list
-
-My SOLUTION TO QUESTION 2.8 HOW TO CRACK CODING INTERVIEW
-
-/**
+**
  * Definition for singly-linked list.
  * struct ListNode {
  *     int val;
@@ -43,19 +39,20 @@ public:
         }
         //logic for kth node  from the end
         countloop=countloop+1;
-        fast=head;
+        
         slow=head;
-        while(countloop>=0)
+        
+        
+        while(slow!=fast)
         {
-            countloop--;
             fast=fast->next;
+            slow=slow->next;
         }
         
-        while(fast!=NULL)
-        {
-            slow=slow->next;
-            fast=fast->next;
-        }
+        
+        
+       
+       
         
         return slow;
         }
